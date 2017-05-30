@@ -1,0 +1,17 @@
+<tr>
+	<td><input type="checkbox" id="checkbox-{{row.id}}" name="item" value="{{row.id}}"><label for="checkbox-{{row.id}}"></label></td>
+	<td>{{row.placa.replace("-","")}}</td>
+	<td>{{row.modelo}}</td>
+	<td>{{row.marca}}</td>
+	<td ng-controller="carController" class="linkPreview" ng-click="get(row)" ng-bind-html="row.imagetag"></td>
+	<td>{{row.combustivel}}</td>
+	<td>{{row.valor | currency:"" }}</td>
+	<td>
+		<button type="button" data-toggle="modal" data-target="#update_car" ng-controller="carController" ng-click="get(row)" class="btn btn-xs btn-info">
+			<span class="glyphicon glyphicon-edit"></span>
+		</button>
+		<button type="button" data-toggle="modal" data-target="#delete_car" ng-controller="carController" ng-click="get(row)" class="btn btn-xs btn-danger">
+			<span class="glyphicon glyphicon-trash"></span>
+		</button>
+	</td>
+</tr>

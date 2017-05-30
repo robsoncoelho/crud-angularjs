@@ -1,0 +1,106 @@
+.ng-invalid-required.ng-touched,
+.ng-invalid-minlength {
+    border-color: red !important;
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+.page-link{
+  cursor: pointer;
+}
+
+.linkPreview {
+  cursor: pointer;
+}
+
+#pagination {
+  text-align: center;
+}
+
+.search-box #srch-term {
+	height: 41px;
+	font-size: 12px;
+}
+
+.search-box button {
+    height: 41px;
+    background: #F8FAFD;
+}
+
+.search-box button .glyphicon {
+	font-size: 12px;
+}
+
+.search-box .glyphicon-remove {
+	position: absolute;
+	z-index: 999;
+	color: red;
+	font-size: 11px;
+	top: 50%;
+	margin-top: -6px;
+	right: 47px;
+	cursor: pointer;
+}
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: -10px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+    content: "\e013";
+    font-family: 'Glyphicons Halflings';
+    position: absolute;
+    top: -.3em;
+    left: .55em;
+    font-size: 1em;
+    line-height: 0.8;
+    transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
