@@ -32,6 +32,12 @@ var app = angular.module("myApp", ['ngSanitize'])
 			"valor" : "20000"
 		}];
 
+		if( localStorage.getItem('items') !== null ) {
+			$rootScope.items = JSON.parse( localStorage.getItem('items') );
+		}
+
+		localStorage.setItem('items', JSON.stringify($rootScope.items));
+
 		$scope.save = function() {
 			$('#new_car').modal('hide');
 			
@@ -46,6 +52,8 @@ var app = angular.module("myApp", ['ngSanitize'])
 				}
 
 				$rootScope.items.push($scope.newCar);
+
+				localStorage.setItem('items', JSON.stringify($rootScope.items));
 				
 				setTimeout(function() {
 					$scope.newCar = {};
@@ -100,6 +108,7 @@ var app = angular.module("myApp", ['ngSanitize'])
 			$rootScope.selected = item;
 		};
 		$scope.delete = function() {
-			$scope.items.splice($scope.items.indexOf($rootScope.selected), 1);
+			$rootScope.items.splice($rootScope.items.indexOf($rootScope.selected), 1);
+			localStorage.setItem('items', JSON.stringify($rootScope.items));
 		};
 	})
